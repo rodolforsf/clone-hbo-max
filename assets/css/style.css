@@ -1,0 +1,359 @@
+@import url("./global.css");
+
+main {
+  background: url("../images/background-subscription.png") no-repeat;
+  background-size: cover;
+}
+
+/* Header */
+.header {
+  animation: gradient 10s ease infinite alternate;
+  background: linear-gradient(-45deg, #56125b, #0f0f10, #271e6e);
+  background-size: 400% 400%;
+  margin-top: 50px;
+  padding: 100px 0 300px;
+  position: relative;
+}
+
+.header::after {
+  background: linear-gradient(0deg, var(--primary-color), transparent);
+  bottom: 0;
+  content: "";
+  height: 250px;
+  position: absolute;
+  width: 100%;
+}
+
+.header__content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: auto;
+  padding: 0 40px;
+}
+
+.header__channels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.header__channel {
+  object-fit: contain;
+}
+
+.header__title {
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.header__title--light {
+  display: block;
+  font-size: 2rem;
+  font-weight: lighter;
+}
+
+.header .text--small {
+  max-width: 300px;
+  text-align: center;
+}
+
+.header__button {
+  animation: wiggle 2.2s linear infinite;
+}
+
+/* Divider */
+
+.divider {
+  background: var(--divider-bg-color);
+  height: 5px;
+  max-width: 700px;
+  width: 70%;
+}
+
+.offer {
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.offer__price {
+  font-family: "Raleway", sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.offer__price--small {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+/* Subscription Plans */
+
+.subscription {
+  background: url("../images/background-movies-series.png") no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.subscription__plans {
+  display: flex;
+  gap: 80px;
+  justify-content: space-around;
+  margin: 40px 0;
+  perspective: 2000px;
+  perspective-origin: top;
+}
+
+.subscription__card {
+  background: var(--card-bg-color);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 600px;
+  padding: 40px 60px;
+  transition: transform 1s ease-in-out;
+}
+
+.subscription__plans:has(.subscription__card:nth-child(1):hover)
+  .subscription__card:nth-child(2) {
+  transform: rotateY(-45deg);
+}
+
+.subscription__plans:has(.subscription__card:nth-child(2):hover)
+  .subscription__card:nth-child(1) {
+  transform: rotateY(45deg);
+}
+
+.subscription__description {
+  font-size: 1.25rem;
+  list-style: none;
+  margin-bottom: 14px;
+  padding-left: 14px;
+  text-align: left;
+}
+
+.subscription__price {
+  color: var(--secondary-color);
+  font-size: 2rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+}
+
+.subscription__price .text--small {
+  color: var(--text-color);
+}
+
+.subscription__description::marker {
+  content: "+";
+  font-size: 2rem;
+  margin: 0 8px 0 0;
+}
+
+.subscription__plan {
+  display: flex;
+  font-size: 1.25rem;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.info {
+  margin: 4rem 0;
+  text-align: center;
+}
+
+.info h2{
+  margin-bottom: 1rem;
+}
+
+.info p {
+  margin-bottom: 3rem;
+}
+
+/* Contents */
+.contents {
+  margin: 100px auto;
+}
+
+.contents__container {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 40px;
+}
+
+.contents__card {
+  background-position: center;
+  border-radius: 16px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 2px solid transparent;
+  transition: transform 0.5s, background 0.5s, border 1s;
+}
+
+.contents__card:hover {
+  border: 2px solid var(--tertiary-color);
+  transform: scale(1.05);
+}
+
+.contents__card:hover .contents__image {
+  opacity: 0;
+}
+
+.contents__image {
+  object-fit: cover;
+  object-position: center;
+  transition: opacity 2s;
+  width: 100%;
+}
+
+/* HBO Content */
+
+.contents__card:nth-child(1):hover {
+  background-image: url("../images/hbo-hover_0.webp");
+}
+
+/* Max Originals Content */
+
+.contents__card:nth-child(2):hover {
+  background-image: url("../images/MAX-Hover.webp");
+}
+
+/* DC Content */
+
+.contents__card:nth-child(3):hover {
+  background-image: url("../images/DC-Hover.webp");
+}
+
+/* WB Content */
+
+.contents__card:nth-child(4):hover {
+  background-image: url("../images/WB-Hover.webp");
+}
+
+/* CN Content */
+
+.contents__card:nth-child(5):hover {
+  background-image: url("../images/CN-Hover.png");
+}
+
+/* Champions League Content */
+
+.contents__card:nth-child(6):hover {
+  background-image: url("../images/UCL-Hover.webp");
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1200px) {
+  .subscription__plans {
+    gap: 40px;
+  }
+
+  .contents__container {
+    gap: 32px;
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  .subscription__plans {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .subscription__card {
+    max-width: 600px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .contents__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .subscription__price {
+    font-size: 1.5rem;
+  }
+
+  .subscription__description {
+    font-size: 1rem;
+  }
+
+  .subscription__plan {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .subscription__card {
+    padding: 40px;
+  }
+
+  .contents__container {
+    grid-auto-flow: column;
+    grid-template-columns: repeat(6, 100%);
+    overflow: auto hidden;
+  }
+}
+
+@media (pointer: coarse) {
+  .contents__card:hover {
+    transform: none;
+  }
+
+  .subscription__plans:has(.subscription__card:nth-child(1):hover)
+    .subscription__card:nth-child(2),
+  .subscription__plans:has(.subscription__card:nth-child(2):hover)
+    .subscription__card:nth-child(1) {
+    transform: none;
+  }
+}
+
+/* Animations */
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  10% {
+    transform: rotate(0);
+  }
+  15% {
+    transform: rotate(-15deg);
+  }
+  20% {
+    transform: rotate(10deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  30% {
+    transform: rotate(10deg);
+  }
+  35% {
+    transform: rotate(-10deg);
+  }
+  40%,
+  100% {
+    transform: rotate(0);
+  }
+}
